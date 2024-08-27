@@ -42,7 +42,7 @@ pom.xml
 /.settings/
 /bin/
 .DS_Store
-**/application-local.properties
+**/application.properties
 *.sh
 /logs
 

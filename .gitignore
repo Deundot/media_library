@@ -35,6 +35,7 @@ build/
 ### 파일 ###
 pom.xml
 /.idea/
+/.mvn/
 /target/
 /.classpath
 /.factorypath
@@ -42,7 +43,7 @@ pom.xml
 /.settings/
 /bin/
 .DS_Store
-**/application.properties
+src/main/resources/application.properties
 *.sh
 /logs
 

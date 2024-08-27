@@ -33,5 +33,15 @@ build/
 .vscode/
 
 ### 파일 ###
-src/main/resources/application.properties
 pom.xml
+/.idea/
+/target/
+/.classpath
+/.factorypath
+/.project
+/.settings/
+/bin/
+.DS_Store
+**/application-local.properties
+*.sh
+/logs

@@ -8,6 +8,11 @@
         SELECT * FROM board
     </select>
 
+    <select id="selectListPostID" parameterType="int" resultType="com.daeun.medialibrary.vo.LibraryBoardVO">
+        SELECT * FROM board
+        WHERE id = #{id}
+    </select>
+
     <insert id="insertPost" parameterType="com.daeun.medialibrary.vo.LibraryBoardVO">
         INSERT INTO board (title, content, writer, view_cnt, notice_yn, delete_yn, created_date)
         VALUES (#{title}, #{content}, #{writer}, #{viewCnt}, #{noticeYn}, #{deleteYn}, NOW())

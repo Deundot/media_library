@@ -5,7 +5,6 @@ import com.daeun.medialibrary.vo.LibraryBoardVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -18,6 +17,11 @@ public class LibraryBoardService {
     @Transactional(readOnly = true)
     public List<LibraryBoardVO> getList() {
         return libraryBoardDAO.selectListPost();
+    }
+
+    @Transactional(readOnly = true)
+    public LibraryBoardVO getListID(int id) {
+        return libraryBoardDAO.selectListPostID(id);
     }
 
     @Transactional

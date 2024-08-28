@@ -28,6 +28,19 @@ public class LibraryController {
         return ResponseEntity.status(HttpStatus.OK).body(allBoardList);
     }
 
+    //클릭하면 상세로 넘어가기
+    //detail
+    @GetMapping(value = "/list", params = "id")
+    public ResponseEntity<LibraryBoardVO> boardListID(@RequestParam(value = "id") int id) {
+        System.out.println(id);
+        LibraryBoardVO listID = libraryBoardService.getListID(id);
+        if (listID == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }else {
+            return new ResponseEntity<>(listID, HttpStatus.OK);
+        }
+    }
+
     //write(글 등록)
     @PostMapping("/write")
     public Integer addLibrary(@RequestBody(required = false) LibraryBoardVO vo
@@ -35,9 +48,5 @@ public class LibraryController {
         System.out.println(vo.toString());
         return libraryBoardService.addPost(vo);
     }
-
-    //이미지 클릭하면 상세로 넘어가기
-    //detail
-
 
 }

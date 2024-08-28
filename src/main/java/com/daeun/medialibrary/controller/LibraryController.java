@@ -2,6 +2,7 @@ package com.daeun.medialibrary.controller;
 
 import com.daeun.medialibrary.service.LibraryBoardService;
 import com.daeun.medialibrary.vo.LibraryBoardVO;
+import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,6 +29,12 @@ public class LibraryController {
     }
 
     //write(글 등록)
+    @PostMapping("/write")
+    public Integer addLibrary(@RequestBody(required = false) LibraryBoardVO vo
+    ) {
+        System.out.println(vo.toString());
+        return libraryBoardService.addPost(vo);
+    }
 
     //이미지 클릭하면 상세로 넘어가기
     //detail

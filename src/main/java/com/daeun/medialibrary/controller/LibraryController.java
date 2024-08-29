@@ -2,12 +2,9 @@ package com.daeun.medialibrary.controller;
 
 import com.daeun.medialibrary.service.LibraryBoardService;
 import com.daeun.medialibrary.vo.LibraryBoardVO;
-import jakarta.annotation.PostConstruct;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

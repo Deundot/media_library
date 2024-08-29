@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.daeun.medialibrary.dao.FileDAO">
+
+    <insert id="insertFile" parameterType="com.daeun.medialibrary.vo.FileVO">
+        INSERT INTO files (file_name, file_path, created_date, file_name_og)
+        VALUES (#{fileName}, #{filePath}, #{createdDate}, #{originalFileName})
+    </insert>
+
+</mapper>

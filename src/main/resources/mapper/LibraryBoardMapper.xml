@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.daeun.medialibrary.dao.LibraryBoardDAO">
-    <select id="selectListPost" resultType="java.util.LinkedHashMap">
+    <select id="selectListPost" parameterType="map" resultType="com.daeun.medialibrary.vo.LibraryBoardVO">
         SELECT * FROM board
     </select>
 
@@ -15,6 +15,6 @@
 
     <insert id="insertPost" parameterType="com.daeun.medialibrary.vo.LibraryBoardVO">
         INSERT INTO board (title, content, writer, view_cnt, notice_yn, delete_yn, created_date)
-        VALUES (#{title}, #{content}, #{writer}, #{viewCnt}, #{noticeYn}, #{deleteYn}, NOW())
+        VALUES (#{title}, #{content}, #{writer}, #{view_cnt}, #{notice_yn}, #{delete_yn}, NOW())
     </insert>
 </mapper>

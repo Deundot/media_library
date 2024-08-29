@@ -17,11 +17,4 @@ public class MedialibraryApplication {
 		SpringApplication.run(MedialibraryApplication.class, args);
 	}
 
-	@PostConstruct
-	public void init() {
-		File directory = new File(uploadDirectory);
-		if (!directory.exists()) {
-			directory.mkdirs(); // 디렉터리 생성
-		}
-	}
 }

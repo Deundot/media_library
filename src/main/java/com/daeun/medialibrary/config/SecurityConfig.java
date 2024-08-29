@@ -3,6 +3,7 @@ package com.daeun.medialibrary.config;
 import jakarta.servlet.DispatcherType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,7 +22,8 @@ public class SecurityConfig {
                 .cors(cors -> cors.disable())
                 .authorizeHttpRequests(authorizeRequests ->
                         authorizeRequests
-                                .dispatcherTypeMatchers(DispatcherType.FORWARD).permitAll()
+                                .requestMatchers(HttpMethod.GET, "/library/**", "/image/**").permitAll()
+                                .requestMatchers(HttpMethod.POST, "/library/**", "/image/**").permitAll()
                                 .anyRequest().authenticated()
                 )
                 .formLogin(formLogin ->
